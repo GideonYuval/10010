@@ -43,23 +43,24 @@ namespace _10010
             int st = 0;
             for (int i = 0; i < visits.Length; i++)
             {
-                if (visits[i]!=null && visits[i] is SpecialT)
+                if (visits[i] != null && visits[i] is SpecialT)
                     st += ((SpecialT)visits[i]).GetTime();
             }
             return st;
-    }
+        }
 
-    public class Management
-    {
-        private Trainer[] staff;
-        private Client[] clients;
-
-        public int AtLeastOneSpecial()
+        public class Management
         {
+            private Trainer[] staff;
+            private Client[] clients;
+
+            public int AtLeastOneSpecial()
+            {
                 int count = 0;
                 foreach (Client client in clients)
-                    if (client!=null && client.SumSpecialTime() > 0) count++;
+                    if (client != null && client.SumSpecialTime() > 0) count++;
                 return count;
+            }
         }
     }
 }
